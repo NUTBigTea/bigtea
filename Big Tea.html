@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Big Tea</title>
   <style>
+    #pizza-count {
+
+    }
     #whosucks {
       color: red;
     }
@@ -36,12 +39,15 @@
   <div>
     <h1 id="page-header">Piza</h1>
     <p>You are a famous Austrian painter baking pizzas</p>
+    <p id="pizza-count">Pizza clicks: 0</p>
   </div>
-  <button id="whosucks" onclick="whosucks()"> who sucks</button>
+  <button id="pizza" onclick="pizza()"> Pizza </button>
   <script>
-    function whosucks(){
-      document.getElementById("whosucks").textContent = "Peter SUCKS";
+    function pizza(){
+      pizzaClicks += 1;
+      document.getElementById("pizza-count").innerText = "Pizza clicks: " + pizzaClicks;
     }
+    let pizzaClicks = 0;
   </script>
 </body>
 </html>
