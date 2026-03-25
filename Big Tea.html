@@ -17,16 +17,6 @@
       text-align: center;
       padding: 2rem;
     }
-
-    #character {
-      position: absolute;
-      top: 200px;
-      left: 200px;
-      width: 50px;
-      height: 50px;
-      background: red;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    }
   </style>
 </head>
 <body>
@@ -39,42 +29,8 @@
     <p>Malachi SUCKS.</p>
 >>>>>>> e127396 (amogus)
   </div>
-  <div id="character"></div>
   <script>
-    const character = document.getElementById('character');
-    const bigTea = document.querySelector('h1');
-    let posX = 200;
-    let posY = 200;
-    document.addEventListener('keydown', (e) => {
-      switch(e.key) {
-        case 'ArrowUp':
-          posY = Math.max(0, posY - 10);
-          break;
-        case 'ArrowDown':
-          posY = Math.min(window.innerHeight - 50, posY + 10);
-          break;
-        case 'ArrowLeft':
-          posX = Math.max(0, posX - 10);
-          break;
-        case 'ArrowRight':
-          posX = Math.min(window.innerWidth - 50, posX + 10);
-          break;
-      }
-      character.style.top = posY + 'px';
-      character.style.left = posX + 'px';
-      checkCollision();
-    });
-    function checkCollision() {
-      const charRect = character.getBoundingClientRect();
-      const teaRect = bigTea.getBoundingClientRect();
-      if (!(charRect.right < teaRect.left || 
-            charRect.left > teaRect.right || 
-            charRect.bottom < teaRect.top || 
-            charRect.top > teaRect.bottom)) {
-        bigTea.textContent = 'Eaten by Among Us!';
-        bigTea.style.color = 'red';
-      }
-    }
+    // New code here
   </script>
 </body>
 </html>
