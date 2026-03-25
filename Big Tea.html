@@ -8,23 +8,33 @@
     #whosucks {
       color: red;
     }
+    #page-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0.8rem 1rem;
+      background: #101820;
+      color: #f5f5f5;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+    }
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #101820;
       color: #f5f5f5;
-      text-align: middle;
-      padding: 2rem;
+      text-align: center;
+      padding: 5rem 2rem 2rem; /* leave room for fixed header */
     }
   </style>
 </head>
 <body>
   <div>
-    <h1>Piza</h1>
+    <h1 id="page-header">Piza</h1>
     <p>You are a famous Austrian painter baking pizzas</p>
   </div>
   <button id="whosucks" onclick="whosucks()"> who sucks</button>
