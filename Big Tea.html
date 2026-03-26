@@ -48,11 +48,12 @@
       document.getElementById("timer").innerText = "Seconds: " + seconds;
     }, 1000);
     let pizzasPerSecond = 0;
+    
 
     function pizza(){
       pizzaClicks += 1;
       document.getElementById("pizza-count").innerText = "Pizza clicks: " + pizzaClicks;
-      pizzasPerSecond = pizzaClicks / seconds
+      pizzasPerSecond = pizzaClicks / seconds;
     }
     let pizzaClicks = 0;
   </script>
