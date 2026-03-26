@@ -40,9 +40,19 @@
     <h1 id="page-header">Piza</h1>
     <p>You are a famous Austrian painter baking pizzas</p>
     <p id="pizza-count">Pizza clicks: 0</p>
+    <p id="timer">Seconds: 0</p>
+    <p id="pizzasPerSecond">Pizzas per second: 0</p>
   </div>
   <button id="pizza" onclick="pizza()"> Pizza </button>
   <script>
+    let seconds = 0;
+    const timerInterval = setInterval(() => {
+      seconds++;
+      document.getElementById("timer").innerText = "Seconds: " + seconds;
+    }, 1000);
+    let pizzasPerSecond = 0;
+    
+
     function pizza(){
       pizzaClicks += 1;
       document.getElementById("pizza-count").innerText = "Pizza clicks: " + pizzaClicks;
