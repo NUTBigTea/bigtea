@@ -43,23 +43,33 @@
   <button id="pizza" onclick="pizza()"> Pizza </button>
   <script>
     let seconds = 0;
+    const clickTimestamps = [];
+    let pizzaClicks = 0;
+
+    function getRecentPizzasPerSecond() {
+      const now = Date.now();
+      const fiveSecondsAgo = now - 5000;
+      // remove timestamps older than 5 seconds
+      while (clickTimestamps.length && clickTimestamps[0] < fiveSecondsAgo) {
+        clickTimestamps.shift();
+      }
+      return clickTimestamps.length / 5;
+    }
+
     const timerInterval = setInterval(() => {
       seconds++;
       document.getElementById("timer").innerText = "Seconds: " + seconds;
-    }, 1000);
-    let pizzasPerSecond = 0;
-    const timerInterval2 = setInterval(() => {
-      pizzasPerSecond = pizzaClicks / seconds;
+      const pizzasPerSecond = getRecentPizzasPerSecond();
       document.getElementById("pizzasPerSecond").innerText = "Pizzas per second: " + pizzasPerSecond.toFixed(2);
     }, 1000);
 
     function pizza(){
       pizzaClicks += 1;
+      clickTimestamps.push(Date.now());
       document.getElementById("pizza-count").innerText = "Pizza clicks: " + pizzaClicks;
-      pizzasPerSecond = pizzaClicks / seconds;
+      const pizzasPerSecond = getRecentPizzasPerSecond();
       document.getElementById("pizzasPerSecond").innerText = "Pizzas per second: " + pizzasPerSecond.toFixed(2);
     }
-    let pizzaClicks = 0;
   </script>
 </body>
 </html>
