@@ -37,7 +37,7 @@
     <h1 id="page-header">Piza</h1>
     <p>You are a famous Austrian painter baking pizzas</p>
     <p id="pizza-count">Pizzas: 0</p>
-    <p id="pizzasPerSecond">Pizzas per second: 0</p>
+    <p id="pizzasPerSecond">Pizzas in the last second: 0</p>
   </div>
   <button id="pizza" onclick="pizza()"> Pizza </button>
   <script>
@@ -58,7 +58,7 @@
     const timerInterval = setInterval(() => {
       seconds++;
       const pizzasPerSecond = getRecentPizzasPerSecond();
-      document.getElementById("pizzasPerSecond").innerText = "Pizzas per second: " + pizzasPerSecond.toFixed(2);
+      document.getElementById("pizzasPerSecond").innerText = "Pizzas in the last second: " + pizzasPerSecond.toFixed(2);
     }, 1000);
 
     function pizza(){
@@ -66,7 +66,7 @@
       clickTimestamps.push(Date.now());
       document.getElementById("pizza-count").innerText = "Pizzas: " + pizzaClicks;
       const pizzasPerSecond = getRecentPizzasPerSecond();
-      document.getElementById("pizzasPerSecond").innerText = "Pizzas per second: " + pizzasPerSecond.toFixed(2);
+      document.getElementById("pizzasPerSecond").innerText = "Pizzas in the last second: " + pizzasPerSecond.toFixed(2);
     }
   </script>
 </body>
