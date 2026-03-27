@@ -47,12 +47,12 @@
 
     function getRecentPizzasPerSecond() {
       const now = Date.now();
-      const fiveSecondsAgo = now - 5000;
-      // remove timestamps older than 5 seconds
-      while (clickTimestamps.length && clickTimestamps[0] < fiveSecondsAgo) {
+      const oneSecondAgo = now - 1000;
+      // remove timestamps older than 1 second
+      while (clickTimestamps.length && clickTimestamps[0] < oneSecondAgo) {
         clickTimestamps.shift();
       }
-      return clickTimestamps.length / 5;
+      return clickTimestamps.length / 1;
     }
 
     const timerInterval = setInterval(() => {
